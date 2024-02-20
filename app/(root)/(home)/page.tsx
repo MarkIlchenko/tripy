@@ -4,13 +4,18 @@ import SearchForm from "@/components/SearchForm";
 import Filters from "@/components/Filters";
 import { getResources } from "@/sanity/actions";
 import ResourceCard from "@/components/ResourceCard";
+import Header from "@/components/Header";
 
 export const revalidate = 900;
 
-export default async function Page() {
+interface Props {
+  searchParams: { [key: string]: string | undefined }
+}
+
+export default async function Page({ searchParams }: Props) {
   const resources = await getResources({
     query: '',
-    category: '',
+    category: searchParams?.category || '',
     page: '1'
   })
 
@@ -33,7 +38,7 @@ export default async function Page() {
       <Filters />
 
       <section className="mt-6 w-full flex flex-col sm:mt-20">
-        Header
+        <Header />
 
         <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
           {resources?.length > 0 ? (
