@@ -16,10 +16,10 @@ interface Props {
     downloadLink: string
 }
 
-const ResourceCard = ({ id, title, image, downloadNumber, downloadLink }: Props) => {
+const ResourceCard = ({ id, title, image, downloadNumber, downloadLink, }: Props) => {
   return (
       <Card className="w-full max-w-fit border-0 !bg-transparent sm:max-w-[356px]">
-         <Link href={downloadLink} target="_blank">
+         <Link href={`/sanity-post/${id}`}>
             <CardHeader className="flex-center flex-col gap-2.5 !p-0">
                <div className="h-fit w-full">
                   <Image 

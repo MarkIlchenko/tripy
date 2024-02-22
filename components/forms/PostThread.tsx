@@ -40,7 +40,12 @@ const PostThread = ({ userId }: { userId: string }) => {
     resolver: zodResolver(ThreadValidation),
     defaultValues: {
       thread: '',
-      accountId: userId
+      accountId: userId,
+      title: '',
+      img: '',
+
+      firstDay: '',
+      lastDay: ''
     }
   })
 
@@ -49,7 +54,11 @@ const PostThread = ({ userId }: { userId: string }) => {
       text: values.thread,
       author: userId,
       communityId: null,
-      path: pathname
+      path: pathname,
+      title: values.title,
+      img: values.img,
+      firstDay: values.firstDay,
+      lastDay: values.lastDay
     })
 
     router.push("/")
@@ -65,6 +74,107 @@ const PostThread = ({ userId }: { userId: string }) => {
             <FormItem className="flex flex-col items-center gap-4">
               <FormLabel className="text-base-semibold w-full text-light-2">
                 Content
+              </FormLabel>
+              <FormControl className="flex-1 text-base-semibold text-gray-200">
+                <Textarea
+                  className="account-form_input no-focus bg-gray-900 border-neutral-800"
+                  rows={15}
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="title"
+          render={({ field }) => (
+            <FormItem className="flex flex-col items-center gap-4">
+              <FormLabel className="text-base-semibold w-full text-light-2">
+                Title
+              </FormLabel>
+              <FormControl className="flex-1 text-base-semibold text-gray-200">
+                <Textarea
+                  className="account-form_input no-focus bg-gray-900 border-neutral-800"
+                  rows={15}
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        Or select your sity
+        <FormField
+          control={form.control}
+          name="title"
+          render={({ field }) => (
+            <FormItem className="flex flex-col items-center gap-4">
+              <FormLabel className="text-base-semibold w-full text-light-2">
+                Title
+              </FormLabel>
+              <FormControl className="flex-1 text-base-semibold text-gray-200">
+                <select {...field} className="account-form_input no-focus bg-gray-900 border-neutral-800">
+                  <option value="">Select a title</option>
+                  <option value="Kharkiv">Kharkiv</option>
+                  <option value="Berlin">Berlin</option>
+                  <option value="Amsterdam">Amsterdam</option>
+                </select>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="img"
+          render={({ field }) => (
+            <FormItem className="flex flex-col items-center gap-4">
+              <FormLabel className="text-base-semibold w-full text-light-2">
+              Image
+              </FormLabel>
+              <FormControl className="flex-1 text-base-semibold text-gray-200">
+                <Textarea
+                  className="account-form_input no-focus bg-gray-900 border-neutral-800"
+                  rows={15}
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        {/* Days */}
+        <FormField
+          control={form.control}
+          name="firstDay"
+          render={({ field }) => (
+            <FormItem className="flex flex-col items-center gap-4">
+              <FormLabel className="text-base-semibold w-full text-light-2">
+              firstDay
+              </FormLabel>
+              <FormControl className="flex-1 text-base-semibold text-gray-200">
+                <Textarea
+                  className="account-form_input no-focus bg-gray-900 border-neutral-800"
+                  rows={15}
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="lastDay"
+          render={({ field }) => (
+            <FormItem className="flex flex-col items-center gap-4">
+              <FormLabel className="text-base-semibold w-full text-light-2">
+              lastDay
               </FormLabel>
               <FormControl className="flex-1 text-base-semibold text-gray-200">
                 <Textarea

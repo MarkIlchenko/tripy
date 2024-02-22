@@ -24,6 +24,11 @@ interface Props {
     }
   }[]
   isComment?: boolean;
+
+  title: string;
+  firstDay: string;
+  lastDay: string
+  // img: string;
 }
 
 const PostCard = ({
@@ -35,7 +40,12 @@ const PostCard = ({
   community,
   createdAt,
   comments,
-  isComment
+  isComment,
+  title,
+
+  firstDay,
+  lastDay
+  // img
 }: Props) => {
   return (
     <article className='flex w-full flex-col rounded-xl bg-gray-900 p-7'>
@@ -70,6 +80,16 @@ const PostCard = ({
                 <Image src="/assets/share.svg" alt='heart' width={24} height={24} className='cursor-pointer object-contain'/>
               </div>
           </div>
+          
+          <div>{title}</div>
+          first Day: {firstDay}
+          last Day: {lastDay}
+          {/* <Image 
+            src={img}
+            alt='img'
+            width={200}
+            height={100}
+          /> */}
           <div className='mt-5 flex flex-col gap-3 mb-2'>
               
 

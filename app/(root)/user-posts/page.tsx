@@ -32,6 +32,11 @@ const page = async() => {
                   community={post.community}
                   createdAt={post.createdAt}
                   comments={post.children}
+                  title={post.title}
+
+                  firstDay={post.firstDay}
+                  lastDay={post.lastDay}
+                  // img={post.img}
                 />
               ))}
             </>
