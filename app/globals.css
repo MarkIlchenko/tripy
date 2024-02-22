@@ -66,6 +66,10 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .thread-card_bar {
+    @apply relative mt-2 w-0.5 grow rounded-full bg-neutral-800;
+  }
   
   .gradient_blue-purple {
     background: linear-gradient(90deg, #4ca5ff 0%, #b573f8 100%);

@@ -6,6 +6,7 @@ import { getResources, getResourcesPlaylist } from "@/sanity/actions";
 import ResourceCard from "@/components/ResourceCard";
 import Header from "@/components/Header";
 
+
 export const revalidate = 900;
 
 interface Props {
@@ -85,6 +86,7 @@ export default async function Page({ searchParams }: Props) {
           </div>
         </section>
       ))}
+
     </main>
   );
 }
