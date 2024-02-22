@@ -18,6 +18,23 @@ const Navbar = () => {
         />
 
         <ul className="flex gap-x-3 max-md:hidden md:gap-x-10">
+          <li className="body-text !font-normal">
+            <Link
+              href="/create-thread"
+            >
+              Create Post
+            </Link>
+          </li>
+          <li className="body-text !font-normal">
+            <Link
+              href="/user-posts"
+            >
+              User Posts
+            </Link>
+          </li>
+        </ul>
+
+        <ul className="flex gap-x-3 max-md:hidden md:gap-x-10">
           <li className="body-text text-gradient_blue-purple !font-bold">
             <Link
               href="https://jsmastery.pro/next13"

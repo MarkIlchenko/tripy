@@ -38,12 +38,6 @@ const page = async() => {
           )}
         </div>
       </section>
-
-      {/* Погода в Харькове */}
-      <section className="mt-6 w-full flex flex-col items-start">
-        <h2 className="self-start heading2 text-white">Weather in Kharkiv:</h2>
-        <WeatherComponent city='Kharkiv'/>
-      </section>
     </main>
   )
 }
