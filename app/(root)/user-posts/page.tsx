@@ -1,3 +1,4 @@
+import WeatherComponent from '@/components/WeatherComponent';
 import PostCard from '@/components/cards/PostCard';
 import { fetchPosts } from '@/lib/actions/thread.actions';
 import { getResourcesPlaylist } from '@/sanity/actions';
@@ -8,7 +9,7 @@ const page = async() => {
   const result = await fetchPosts(1, 30);
   const user = await currentUser();
 
-  console.log(result);
+  //console.log(result);
 
   return (
     <main className="flex-center paddings mx-auto w-full max-w-screen-2xl flex-col mt-10 mb-20">
@@ -36,6 +37,12 @@ const page = async() => {
             </>
           )}
         </div>
+      </section>
+
+      {/* Погода в Харькове */}
+      <section className="mt-6 w-full flex flex-col items-start">
+        <h2 className="self-start heading2 text-white">Weather in Kharkiv:</h2>
+        <WeatherComponent city='Kharkiv'/>
       </section>
     </main>
   )
