@@ -39,10 +39,10 @@ const PostThread = ({ userId }: { userId: string }) => {
   const form = useForm({
     resolver: zodResolver(ThreadValidation),
     defaultValues: {
-      thread: '',
+      thread: 'thread',
       accountId: userId,
       title: '',
-      img: '',
+      img: 'implementing',
 
       firstDay: '',
       lastDay: ''
@@ -67,7 +67,7 @@ const PostThread = ({ userId }: { userId: string }) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col justify-start gap-10 mt-10">
-        <FormField
+        {/* <FormField
           control={form.control}
           name="thread"
           render={({ field }) => (
@@ -85,7 +85,7 @@ const PostThread = ({ userId }: { userId: string }) => {
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
 
         <FormField
           control={form.control}
@@ -128,7 +128,7 @@ const PostThread = ({ userId }: { userId: string }) => {
           )}
         />
 
-        <FormField
+        {/* <FormField
           control={form.control}
           name="img"
           render={({ field }) => (
@@ -146,7 +146,7 @@ const PostThread = ({ userId }: { userId: string }) => {
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
 
         {/* Days */}
         <FormField
