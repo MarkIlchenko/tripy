@@ -88,6 +88,12 @@
   .body-text {
     @apply text-[16px] leading-[22px] font-normal;
   }
+
+  .my-selector {
+    position: absolute;
+    top: 54%;
+    right: 20px;
+  }
  
   .dark {
     --background: 222.2 84% 4.9%;

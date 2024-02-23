@@ -36,6 +36,14 @@ const PostThread = ({ userId }: { userId: string }) => {
   const router = useRouter();
   const pathname = usePathname();
 
+  //Date
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  const formattedToday = `${year}-${month}-${day}`;
+  //
+
   const form = useForm({
     resolver: zodResolver(ThreadValidation),
     defaultValues: {
@@ -44,7 +52,7 @@ const PostThread = ({ userId }: { userId: string }) => {
       title: '',
       img: 'implementing',
 
-      firstDay: '',
+      firstDay: formattedToday,
       lastDay: ''
     }
   })
@@ -67,86 +75,46 @@ const PostThread = ({ userId }: { userId: string }) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col justify-start gap-10 mt-10">
-        {/* <FormField
-          control={form.control}
-          name="thread"
-          render={({ field }) => (
-            <FormItem className="flex flex-col items-center gap-4">
-              <FormLabel className="text-base-semibold w-full text-light-2">
-                Content
-              </FormLabel>
-              <FormControl className="flex-1 text-base-semibold text-gray-200">
-                <Textarea
-                  className="account-form_input no-focus bg-gray-900 border-neutral-800"
-                  rows={15}
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        /> */}
-
-        <FormField
-          control={form.control}
-          name="title"
-          render={({ field }) => (
-            <FormItem className="flex flex-col items-center gap-4">
-              <FormLabel className="text-base-semibold w-full text-light-2">
-                Title
-              </FormLabel>
-              <FormControl className="flex-1 text-base-semibold text-gray-200">
-                <Textarea
-                  className="account-form_input no-focus bg-gray-900 border-neutral-800"
-                  rows={15}
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        Or select your sity
-        <FormField
-          control={form.control}
-          name="title"
-          render={({ field }) => (
-            <FormItem className="flex flex-col items-center gap-4">
-              <FormLabel className="text-base-semibold w-full text-light-2">
-                Title
-              </FormLabel>
-              <FormControl className="flex-1 text-base-semibold text-gray-200">
-                <select {...field} className="account-form_input no-focus bg-gray-900 border-neutral-800">
-                  <option value="">Select a title</option>
-                  <option value="Kharkiv">Kharkiv</option>
-                  <option value="Berlin">Berlin</option>
-                  <option value="Amsterdam">Amsterdam</option>
-                </select>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        {/* <FormField
-          control={form.control}
-          name="img"
-          render={({ field }) => (
-            <FormItem className="flex flex-col items-center gap-4">
-              <FormLabel className="text-base-semibold w-full text-light-2">
-              Image
-              </FormLabel>
-              <FormControl className="flex-1 text-base-semibold text-gray-200">
-                <Textarea
-                  className="account-form_input no-focus bg-gray-900 border-neutral-800"
-                  rows={15}
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        /> */}
+        <span className="relative">
+          <FormField
+            control={form.control}
+            name="title"
+            render={({ field }) => (
+              <FormItem className="flex flex-col items-center gap-4">
+                <FormLabel className="text-base-semibold w-full text-light-2">
+                  Title
+                </FormLabel>
+                <FormControl className="flex-1 text-base-semibold text-gray-200">
+                  <Textarea
+                    className="account-form_input no-focus bg-gray-900 border-neutral-800"
+                    rows={1}
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <span className="my-selector">
+            <FormField
+              control={form.control}
+              name="title"
+              render={({ field }) => (
+                <FormItem className="flex flex-col items-center gap-4">
+                  <FormControl className="flex-1 text-base-semibold text-gray-200">
+                    <select {...field} className="account-form_input no-focus bg-gray-900 border-neutral-800">
+                      <option value="">Select a title</option>
+                      <option value="Kharkiv">Kharkiv</option>
+                      <option value="Berlin">Berlin</option>
+                      <option value="Amsterdam">Amsterdam</option>
+                    </select>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </span>
+        </span>
 
         {/* Days */}
         <FormField
@@ -160,7 +128,7 @@ const PostThread = ({ userId }: { userId: string }) => {
               <FormControl className="flex-1 text-base-semibold text-gray-200">
                 <Textarea
                   className="account-form_input no-focus bg-gray-900 border-neutral-800"
-                  rows={15}
+                  rows={1}
                   {...field}
                 />
               </FormControl>
@@ -168,6 +136,7 @@ const PostThread = ({ userId }: { userId: string }) => {
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="lastDay"
@@ -179,7 +148,7 @@ const PostThread = ({ userId }: { userId: string }) => {
               <FormControl className="flex-1 text-base-semibold text-gray-200">
                 <Textarea
                   className="account-form_input no-focus bg-gray-900 border-neutral-800"
-                  rows={15}
+                  rows={1}
                   {...field}
                 />
               </FormControl>
