@@ -33,7 +33,7 @@ export default async function Page({ searchParams }: Props) {
 
       <section className="nav-padding w-full relative">
         <div className="flex-center relative  w-full flex-col rounded-xl bg-banner bg-cover bg-center text-center">
-          <h1 className="sm:heading1 heading2 mb-6 text-center text-white flex w-full justify-center flex-col h-full">Tripy - test app</h1>
+          <h1 className="sm:heading1 heading2 mb-6 text-center flex w-full justify-center flex-col h-full text-white">Tripy - test app</h1>
         </div>
         <SearchForm />
       </section>
