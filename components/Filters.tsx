@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { formUrlQuery } from '@/sanity/utils';
 import { useSearchParams, useRouter } from 'next/navigation';
 
-const links = ['all', 'Next 13', 'frontend', 'backend', 'fullstack'];
+const links = ['europe', 'north-america', 'africa', 'south-america', 'asia'];
 
 const Filters = () => {
   const [active, setActive] = useState('');
@@ -35,14 +35,14 @@ const Filters = () => {
   }
   
   return (
-    <ul className="text-white-800 mx-auto body-text no-scrollbar flex w-full max-w-full gap-2 overflow-auto py-12 sm:max-w-2xl">
-      {links.map((link) => (
+    <ul className="text-white-800 mx-auto body-text no-scrollbar flex w-full max-w-full gap-2 py-12 sm:max-w-2xl">
+      {links.map((link, index) => (
         <button
           key={link}
           onClick={() => handleFilter(link)}
           className={`${
             active === link ?"gradient_blue-purple" : ""
-          } whitespace-nowrap rounded-lg px-8 py-2.5 capitalize`}
+          } whitespace-nowrap rounded-lg px-8 py-2.5 capitalize `}
         >
           {link}
         </button>

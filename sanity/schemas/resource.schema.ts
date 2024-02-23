@@ -18,7 +18,7 @@ const schema = {
     },
     {
       name: 'downloadLink',
-      title: 'Download Link',
+      title: 'Source Link',
       type: 'url',
       validation: (Rule: any) => Rule.required()
     },
@@ -43,7 +43,7 @@ const schema = {
       type: 'string',
       validation: (Rule: any) => Rule.required(),
       options: {
-        list: ['frontend', 'backend', 'next 14', 'fullstack', 'other']
+        list: ['europe', 'north-america', 'africa', 'south-america', 'asia']
       }
     }
   ]

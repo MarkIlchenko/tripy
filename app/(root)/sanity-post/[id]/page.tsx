@@ -29,7 +29,7 @@ const page = async ({ params }: { params: { id: string }}) => {
 
   // Проверка на существование выбранного ресурса
   if (!selectedResource) {
-    return <div>Ресурс не найден</div>;
+    return <div>Ресурс не найден </div>;
   }
 
   // Получение текущей даты и даты через 7 дней

@@ -37,7 +37,7 @@ const SearchForm = () => {
   }, [search])
 
   return (
-    <form className='flex-center mx-auto  w-full sm:mt-4  sm:px-5'>
+    <form className='flex-center absolute search-input mx-auto  w-full sm:mt-4  sm:px-5'>
       <label className='flex items-center ml-auto mr-auto justify-center relative w-full max-w-3xl'>
          <Image 
             src="/temp/magnifying-glass.svg"

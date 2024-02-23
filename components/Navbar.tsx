@@ -1,3 +1,4 @@
+import { UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -18,6 +19,13 @@ const Navbar = () => {
         />
 
         <ul className="flex gap-x-3 max-md:hidden md:gap-x-10">
+          <li className="body-text text-gradient_blue-purple !font-bold">
+            <Link
+              href="/user-posts"
+            >
+              User Posts
+            </Link>
+          </li>
           <li className="body-text !font-normal">
             <Link
               href="/create-thread"
@@ -25,31 +33,8 @@ const Navbar = () => {
               Create Post
             </Link>
           </li>
-          <li className="body-text !font-normal">
-            <Link
-              href="/user-posts"
-            >
-              User Posts
-            </Link>
-          </li>
-        </ul>
-
-        <ul className="flex gap-x-3 max-md:hidden md:gap-x-10">
-          <li className="body-text text-gradient_blue-purple !font-bold">
-            <Link
-              href="https://jsmastery.pro/next13"
-              target="_blank"
-            >
-              Next.js 13.4 Course
-            </Link>
-          </li>
-          <li className="body-text !font-normal">
-            <Link
-              href="https://jsmastery.pro/masterclass"
-              target="_blank"
-            >
-              Masterclass
-            </Link>
+          <li>
+            <UserButton afterSignOutUrl="/"/>
           </li>
         </ul>
       </div>

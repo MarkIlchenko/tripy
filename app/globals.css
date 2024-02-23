@@ -75,6 +75,16 @@
     background: linear-gradient(90deg, #4ca5ff 0%, #b573f8 100%);
   }
 
+  .bg-banner {
+    background: url('/temp/jsm_resources_banner.svg');
+    height: 320px;
+  }
+
+  .search-input {
+    bottom: -24px;
+    left: 16px;
+  }
+
   .body-text {
     @apply text-[16px] leading-[22px] font-normal;
   }
@@ -109,6 +119,8 @@
     --ring: 212.7 26.8% 83.9%;
   }
 }
+
+
  
 @layer base {
   * {
