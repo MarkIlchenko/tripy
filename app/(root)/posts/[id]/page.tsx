@@ -49,7 +49,7 @@ const page = async({ params }: { params: { id: string }}) => {
   
         {/* Погода в Харькове {post.title}*/}
         <section className="mt-6 mr-auto ml-20 flex flex-col items-start">
-          <h2 className="self-start heading2 text-white">Weather in {post.title}:</h2>
+          <h2 className="self-start heading2 text-[#19213D]">Weather in {post.title}:</h2>
           <WeatherComponent city={post.title} startDate={`${post.firstDay === formattedToday ? formattedToday : post.firstDay}`} endDate={`${post.lastDay}`}/>
         </section>
       </main>

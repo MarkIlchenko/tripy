@@ -4,10 +4,10 @@ import Link from 'next/link'
 
 const Navbar = () => {
   return (
-    <nav className="flex-center top-0 z-50 w-full border-b-2 border-y-slate-800 bg-black-100 py-7 text-white">
+    <nav className="flex-center top-0 z-50 w-full border-b-2 bg-white py-7 text-white">
       <div className="flex justify-between mx-auto w-full max-w-screen-2xl px-6 xs:px-8 sm:px-16">
         <Link href="/">
-          <Image src='/temp/jsm-logo.svg' width={55} height={40} alt='JSM logo' />
+          <Image src='/images/logo.svg' width={40} height={24} alt='JSM logo'/>
         </Link>
 
         <Image 

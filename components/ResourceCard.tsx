@@ -47,7 +47,7 @@ const ResourceCard = ({ id, title, image, downloadNumber, downloadLink, }: Props
                   />
                </div>
 
-               <CardTitle className="text-white w-full text-left line-clamp-1">{title}</CardTitle>
+               <CardTitle className="text-[#19213D] w-full text-left line-clamp-1">{title}</CardTitle>
             </CardHeader>
          </Link>
          
@@ -65,8 +65,8 @@ const ResourceCard = ({ id, title, image, downloadNumber, downloadLink, }: Props
             </Link>
          </CardContent> */}
 
-            <div className="flex gap-1.5 text-white w-full ml-auto mt-2">
-              {formattedToday} - {formattedNextWeek}
+            <div className="flex gap-1.5 text-[#667394] font-bold w-full ml-auto mt-2">
+              {formattedToday} / {formattedNextWeek}
             </div>
       </Card>
   )

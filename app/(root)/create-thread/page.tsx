@@ -24,7 +24,7 @@ const page = async() => {
 
   return (
     <div className="flex-center paddings mx-auto w-full max-w-screen-2xl flex-col mt-10 mb-20">
-      <h1 className='heading2 text-white'>Create Post</h1>
+      <h1 className='heading2 text-[#19213D]'>Create Post</h1>
       <Dialog>
         <DialogTrigger>Open</DialogTrigger>
         <DialogContent >

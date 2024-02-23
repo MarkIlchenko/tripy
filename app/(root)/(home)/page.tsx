@@ -33,7 +33,7 @@ export default async function Page({ searchParams }: Props) {
 
       <section className="nav-padding w-full relative">
         <div className="flex-center relative  w-full flex-col rounded-xl bg-banner bg-cover bg-center text-center">
-          <h1 className="sm:heading1 heading2 mb-6 text-center text-white flex w-full justify-center flex-col h-full">JavaScript Mastery Resources</h1>
+          <h1 className="sm:heading1 heading2 mb-6 text-center text-white flex w-full justify-center flex-col h-full">Tripy - test app</h1>
         </div>
         <SearchForm />
       </section>
@@ -71,7 +71,7 @@ export default async function Page({ searchParams }: Props) {
 
       {resourcesPlaylist.map((item: any) => (
         <section key={item._id} className="flex items-center mt-6 w-full flex-col sm:mt-20">
-          <h1 className="self-start heading2 text-white">{item.title}</h1>
+          <h1 className="self-start heading2 text-[#19213D]">{item.title}</h1>
           <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
             {item.resources.map((resource: any) => (
                 <ResourceCard 

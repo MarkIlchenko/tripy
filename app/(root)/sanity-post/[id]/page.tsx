@@ -61,7 +61,7 @@ const page = async ({ params }: { params: { id: string }}) => {
       />
 
       <section className="mt-6 mr-auto ml-20 flex flex-col items-start">
-          <h2 className="self-start heading2 text-white">Weather in {selectedResource.title}:</h2>
+          <h2 className="self-start heading2 text-[#19213D]">Weather in {selectedResource.title}:</h2>
           <WeatherComponent city={selectedResource.title} startDate={`${formattedToday}`} endDate={`${formattedNextWeek}`}/>
         </section>
     </div>

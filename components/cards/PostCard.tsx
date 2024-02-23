@@ -49,7 +49,7 @@ const PostCard = ({
 }: Props) => {
   return (
     <article className='flex flex-col rounded-xl bg-gray-900'>
-        <Image src="/temp/ChatGPT.png" alt="image" width={300} height={100} className='rounded-xl'></Image>
+        <Image src="/images/banner.svg" alt="image" width={300} height={100} className='rounded-xl'></Image>
         <div className='flex w-full flex-1 flex-row gap-4  p-4'>
           <div className='flex flex-col items-center mb-2'>
             <Link href={`/profile/${author.id}`} className='relative h-11 w-11'>
@@ -65,10 +65,12 @@ const PostCard = ({
           </div>
 
           <div className='flex w-full flex-col'>
-            <h2>{title}</h2>
+            <h2 className='text-white font-bold'>{title}</h2>
             
-            {firstDay} - {lastDay}
-            <Link href={`/posts/${id}`} className='mt-6'>
+            <div className='text-slate-500'>
+              {firstDay} - {lastDay}
+            </div>
+            <Link href={`/posts/${id}`} className='mt-6 text-white bg-slate-700 text-center py-2 rounded-xl'>
               Explore trip
             </Link>
           </div>

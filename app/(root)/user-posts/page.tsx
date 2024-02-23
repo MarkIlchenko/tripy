@@ -34,9 +34,9 @@ const page = async() => {
 
         
         <div className='w-full flex items-center justify-between'>
-          <h1 className="self-start heading2 text-white">My Posts:</h1>
+          <h1 className="self-start heading2 text-[#19213D]">My Posts:</h1>
           <Dialog>
-            <DialogTrigger className='bg-gray-900 py-2 px-6 rounded-xl'>Add trip +</DialogTrigger>
+            <DialogTrigger className='gradient_blue-purple py-2 px-6 rounded-xl text-white font-semibold'>Add trip +</DialogTrigger>
             <DialogContent >
               <PostThread userId={userInfo._id} />
             </DialogContent>

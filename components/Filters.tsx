@@ -41,8 +41,8 @@ const Filters = () => {
           key={link}
           onClick={() => handleFilter(link)}
           className={`${
-            active === link ?"gradient_blue-purple" : ""
-          } whitespace-nowrap rounded-lg px-8 py-2.5 capitalize `}
+            active === link ?"gradient_blue-purple text-white" : "text-[#667394]"
+          } whitespace-nowrap rounded-lg px-8 py-2.5 capitalize font-bold`}
         >
           {link}
         </button>

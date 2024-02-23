@@ -19,8 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={`${inter.className} min-h-screen bg-gray-950 text-white`}>
+      <html lang="en"> 
+        <body className={`${inter.className} min-h-screen bg-[#F8FBFF] flex flex-col justify-between`}>
           <Navbar />
           {children}
           <Footer />
@@ -29,3 +29,5 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
+// bg-gray-950 text-white
