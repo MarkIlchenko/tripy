@@ -26,11 +26,6 @@ export default async function Page({ searchParams }: Props) {
 
   return (
     <main className="flex-center paddings mx-auto w-full max-w-screen-2xl flex-col mt-10 mb-20 sm:px-10 flex-wrap">
-      {/* <h1>Threads</h1>
-      <UserButton afterSignOutUrl="/"/>
-      <Button>Click me</Button> */}
-
-
       <section className="nav-padding w-full relative">
         <div className="flex-center relative  w-full flex-col rounded-xl bg-banner bg-cover bg-center text-center">
           <h1 className="sm:heading1 heading2 mb-6 text-center flex w-full justify-center flex-col h-full text-white">Tripy - test app</h1>
@@ -41,9 +36,8 @@ export default async function Page({ searchParams }: Props) {
       <Filters />
 
       {(searchParams?.query || searchParams?.category) && (
-        <section className="mt-6 w-full flex flex-col sm:mt-20">
+        <section className="mt-6 w-full flex flex-col sm:mt-44">
           <Header
-            title="Resources"
             query={searchParams?.query || ''}
             category={searchParams?.category || ''}
           />
@@ -70,7 +64,7 @@ export default async function Page({ searchParams }: Props) {
       )}
 
       {resourcesPlaylist.map((item: any) => (
-        <section key={item._id} className="flex items-center mt-6 w-full flex-col sm:mt-20">
+        <section key={item._id} className="flex items-center mt-6 w-full flex-col sm:mt-44">
           <h1 className="self-start heading2 text-[#19213D]">{item.title}</h1>
           <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
             {item.resources.map((resource: any) => (

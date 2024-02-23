@@ -11,6 +11,15 @@ export const metadata = {
 
 const inter = Inter({ subsets: ["latin"] })
 
+const styles = {
+    body: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh',
+    }
+};
+
 export default function RootLayout({
     children
 }: {
@@ -19,7 +28,7 @@ export default function RootLayout({
     return (
         <ClerkProvider>
             <html lang="en">
-                <body className={`${inter.className} bg-stone-950 text-white`}>
+                <body className={`${inter.className} bg-stone-950`} style={styles.body}>
                     {children}
                 </body>
             </html>

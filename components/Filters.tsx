@@ -35,7 +35,7 @@ const Filters = () => {
   }
   
   return (
-    <ul className="text-white-800 mx-auto body-text no-scrollbar flex w-full max-w-full gap-2 py-12 sm:max-w-2xl">
+    <ul className="text-white-800 mx-auto body-text no-scrollbar flex w-full max-w-full gap-2 py-12 sm:max-w-2xl max-md:hidden">
       {links.map((link, index) => (
         <button
           key={link}

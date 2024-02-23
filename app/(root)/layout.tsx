@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en"> 
-        <body className={`${inter.className} min-h-screen bg-[#F8FBFF] flex flex-col justify-between`}>
+        <body className={`${inter.className} min-h-screen bg-[#F8FBFF] flex flex-col justify-between px-2`}>
           <Navbar />
           {children}
           <Footer />

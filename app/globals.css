@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
  
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -90,9 +97,25 @@
   }
 
   .my-selector {
-    position: absolute;
+    /* position: absolute; */
     top: 54%;
     right: 20px;
+  }
+
+  
+
+  @media screen and (max-width: 475px) {
+      .my-selector {
+          margin-top: 20px;
+      }
+      .add-button {
+        bottom: 20px;
+        right: 20px;
+        position: fixed;
+      }
+      .sm-section {
+        flex-direction: column;
+      }
   }
 
   .my-background {

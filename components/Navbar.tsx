@@ -10,7 +10,7 @@ const Navbar = () => {
           <Image src='/images/logo.svg' width={40} height={24} alt='JSM logo'/>
         </Link>
 
-        <ul className="flex gap-x-3 max-md:hidden md:gap-x-10">
+        <ul className="flex items-center gap-x-3 md:gap-x-16">
           <li className="body-text text-gradient_blue-purple !font-bold">
             <Link
               href="/user-posts"

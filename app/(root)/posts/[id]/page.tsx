@@ -25,7 +25,7 @@ const page = async({ params }: { params: { id: string }}) => {
 
   if(post.title) {
     return (
-      <main className="flex justify-between mx-auto w-full max-w-screen-2xl  mt-10 mb-20">
+      <main className="flex  justify-between  mx-auto w-full max-w-screen-2xl  mt-10 mb-20 sm-section">
         <section className='relative w-fit'>
           <div className='w-fit'>
             <PostCard
@@ -47,8 +47,7 @@ const page = async({ params }: { params: { id: string }}) => {
           </div>
         </section>
   
-        {/* Погода в Харькове {post.title}*/}
-        <section className="mt-6 mr-auto ml-20 flex flex-col items-start">
+        <section className="mt-6 md:mr-auto w-fit md:ml-20 flex flex-col items-start">
           <h2 className="self-start heading2 text-[#19213D]">Weather in {post.title}:</h2>
           <WeatherComponent city={post.title} startDate={`${post.firstDay === formattedToday ? formattedToday : post.firstDay}`} endDate={`${post.lastDay}`}/>
         </section>

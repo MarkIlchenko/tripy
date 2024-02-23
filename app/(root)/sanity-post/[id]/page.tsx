@@ -50,7 +50,7 @@ const page = async ({ params }: { params: { id: string }}) => {
 
   // Отображение выбранного ресурса
   return (
-    <div className="flex justify-between mx-auto w-full max-w-screen-2xl  mt-10 mb-20">
+    <div className="flex justify-between mx-auto w-full max-w-screen-2xl  mt-10 mb-20 sm-section">
       <ResourceCard 
         key={selectedResource._id}
         title={selectedResource.title}
@@ -60,7 +60,7 @@ const page = async ({ params }: { params: { id: string }}) => {
         downloadLink={selectedResource.downloadLink}
       />
 
-      <section className="mt-6 mr-auto ml-20 flex flex-col items-start">
+      <section className="mt-6 mr-auto md:ml-20 md:mt-4 flex flex-col items-start">
           <h2 className="self-start heading2 text-[#19213D]">Weather in {selectedResource.title}:</h2>
           <WeatherComponent city={selectedResource.title} startDate={`${formattedToday}`} endDate={`${formattedNextWeek}`}/>
         </section>
