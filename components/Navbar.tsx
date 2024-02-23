@@ -26,13 +26,6 @@ const Navbar = () => {
               User Posts
             </Link>
           </li>
-          <li className="body-text !font-normal">
-            <Link
-              href="/create-thread"
-            >
-              Create Post
-            </Link>
-          </li>
           <li>
             <UserButton afterSignOutUrl="/"/>
           </li>

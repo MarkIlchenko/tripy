@@ -81,7 +81,7 @@ const PostThread = ({ userId }: { userId: string }) => {
             name="title"
             render={({ field }) => (
               <FormItem className="flex flex-col items-center gap-4">
-                <FormLabel className="text-base-semibold w-full text-light-2">
+                <FormLabel className="text-base-semibold w-full text-light-2 text-slate-900">
                   Title
                 </FormLabel>
                 <FormControl className="flex-1 text-base-semibold text-gray-200">
@@ -122,7 +122,7 @@ const PostThread = ({ userId }: { userId: string }) => {
           name="firstDay"
           render={({ field }) => (
             <FormItem className="flex flex-col items-center gap-4">
-              <FormLabel className="text-base-semibold w-full text-light-2">
+              <FormLabel className="text-base-semibold w-full text-light-2 text-slate-900">
               firstDay
               </FormLabel>
               <FormControl className="flex-1 text-base-semibold text-gray-200">
@@ -142,7 +142,7 @@ const PostThread = ({ userId }: { userId: string }) => {
           name="lastDay"
           render={({ field }) => (
             <FormItem className="flex flex-col items-center gap-4">
-              <FormLabel className="text-base-semibold w-full text-light-2">
+              <FormLabel className="text-base-semibold w-full text-light-2 text-slate-900">
               lastDay
               </FormLabel>
               <FormControl className="flex-1 text-base-semibold text-gray-200">

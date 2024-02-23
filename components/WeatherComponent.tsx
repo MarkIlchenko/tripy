@@ -2,6 +2,17 @@
 
 import React, { useState, useEffect } from 'react';
 
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+
+
 interface Props {
   city: string;
   startDate: string;
@@ -45,21 +56,47 @@ const WeatherComponent = ({ city, startDate, endDate }: Props) => {
 
   return (
     <div>
-      <h2>Прогноз погоды для {city}</h2>
       {weatherData && weatherData.days && weatherData.days.length > 0 && (
-        <div>
-          {weatherData.days.map(day => (
-            <div key={day.datetime}>
-              <p>Дата: {day.datetime}</p>
-              <p>Температура: {day.tempmax}°C / {day.tempmin}°C</p>
-              <p>Описание: {day.conditions}</p>
-            </div>
-          ))}
-        </div>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Дата</TableHead>
+              <TableHead>Температура (макс/мин)</TableHead>
+              <TableHead>Описание</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {weatherData.days.map(day => (
+              <TableRow key={day.datetime}>
+                <TableCell>{day.datetime}</TableCell>
+                <TableCell>{day.tempmax}°C / {day.tempmin}°C</TableCell>
+                <TableCell>{day.conditions}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       )}
       {!weatherData && <p>Данные о погоде недоступны</p>}
     </div>
-  )
+  );
+  
+  // return (
+  //   <div>
+  //     <h2>Прогноз погоды для {city}</h2>
+  //     {weatherData && weatherData.days && weatherData.days.length > 0 && (
+  //       <div>
+  //         {weatherData.days.map(day => (
+  //           <div key={day.datetime}>
+  //             <p>Дата: {day.datetime}</p>
+  //             <p>Температура: {day.tempmax}°C / {day.tempmin}°C</p>
+  //             <p>Описание: {day.conditions}</p>
+  //           </div>
+  //         ))}
+  //       </div>
+  //     )}
+  //     {!weatherData && <p>Данные о погоде недоступны</p>}
+  //   </div>
+  // )
 }
 
 export default WeatherComponent;
