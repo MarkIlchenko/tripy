@@ -45,26 +45,28 @@ const page = async() => {
         <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
           {result.posts.length === 0 ? (
             <p className="no-result">No posts found</p>
-          ): (
+          ) : (
             <>
-              {result.posts.map((post) => (
-                <PostCard
-                  key={post._id}
-                  id={post._id}
-                  currentUserId={user?.id || ""}
-                  parentId={post.parentId}
-                  content={post.text}
-                  author={post.author}
-                  community={post.community}
-                  createdAt={post.createdAt}
-                  comments={post.children}
-                  title={post.title}
-
-                  firstDay={post.firstDay}
-                  lastDay={post.lastDay}
-                  // img={post.img}
-                />
-              ))}
+              {result.posts.map((post) => {
+                return post.firstDay || post.lastDay ? (
+                  <PostCard
+                    key={post._id}
+                    id={post._id}
+                    currentUserId={user?.id || ""}
+                    parentId={post.parentId}
+                    content={post.text}
+                    author={post.author}
+                    community={post.community}
+                    createdAt={post.createdAt}
+                    comments={post.children}
+                    title={post.title}
+                    firstDay={post.firstDay}
+                    lastDay={post.lastDay}
+                  />
+                ) : (
+                  <p></p>
+                );
+              })}
             </>
           )}
         </div>
